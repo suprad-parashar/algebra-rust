@@ -60,9 +60,7 @@ impl LinearEquations {
             DMatrix::from_fn(self.equations.len(), variables.len(), |i, j| {
                 coefficients[i][j] as f64
             });
-        println!("{:?}", coefficients);
         let values: DMatrix<f64> = DMatrix::from_fn(variables.len(), 1, |i, _j| values[i] as f64);
-        println!("{:?}", values);
 
         let inverse_matrix = coefficients
             .try_inverse()
